@@ -36,3 +36,28 @@ SELECT * FROM author;*/
 /*
 DROP TABLE IF EXISTS author3;*/
 --sadece drop table ile silebilirdik ancak eger tablo yoksa hata mesaji almamak icin if exsist yapisini kullanabiliriz
+
+--id'si 10 olan satırdaki bilgileri gunccelleyelim
+/*UPDATE author
+SET first_name = 'Birkan', last_name='Gurkan', email= 'birkan@gurkan.com', birthday='1980-01-01'
+WHERE id= 10;*/
+-- degisiklik en altta gorulecek
+
+-- ismi ismail olan kisinin soyismi xxxx ile degistirilecek ve sonuc geri dondurulecek
+/*UPDATE author
+SET last_name= 'XXXX'
+WHERE first_name ='İsmail'
+RETURNING *;*/
+
+
+--id'si 6 olan veriyi sildik, buna ragmen diger kullanicilarin id'si degismedi!
+/*
+DELETE FROM author
+WHERE id= 6;*/
+
+
+-- id'si 15'ten buyuk olan tum verileri sildik
+/*
+DELETE FROM author
+WHERE id > 15;*/
+
